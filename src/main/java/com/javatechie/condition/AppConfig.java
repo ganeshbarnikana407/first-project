@@ -9,16 +9,16 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class AppConfig {
 
-//    @Bean
-//    @ConditionalOnProperty(name="prod.datasource.enabled", havingValue="true")
-//    @Primary
-//    public DataSourceConfig enableProdDatabase() {
-//        return new EnableProdDataSource();
-//    }
-
     @Bean
-    @ConditionalOnMissingBean(EnableProdDataSource.class)
-    public EnableDevDataSource enableDevDatabase() {
-        return new EnableDevDataSource();
+    @ConditionalOnProperty(name="prod.datasource.enabled", havingValue="true")
+    @Primary
+    public DataSourceConfig enableProdDatabase() {
+        return new EnableProdDataSource();
     }
+
+//    @Bean
+//    @ConditionalOnMissingBean(EnableProdDataSource.class)
+//    public EnableDevDataSource enableDevDatabase() {
+//        return new EnableDevDataSource();
+//    }
 }
