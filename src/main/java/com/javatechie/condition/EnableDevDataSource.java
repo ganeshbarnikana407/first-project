@@ -4,7 +4,7 @@ public class EnableDevDataSource implements DataSourceConfig {
 
 	@Override
 	public void makeConnection() {
-		System.out.println("Connectiong established from application to github to DEV(default) database");
+		System.out.println("Connectiong established from application to github to DEV(default) new from new branchdatabase");
 
 	}
 }
